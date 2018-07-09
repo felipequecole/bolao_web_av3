@@ -13,6 +13,8 @@ class PalpiteForm extends React.Component {
             dataDeNascimento: '',
             campeao: '',
             vice: '',
+            terceiro: '',
+            quarto: '',
             confirmarSenha: '',
             estado: NovoPalpiteMaquinaEstados.inicio(),
             mensagem: 'Digite seu e-mail para dar início',
@@ -27,6 +29,8 @@ class PalpiteForm extends React.Component {
                 dataDeNascimento: '',
                 campeao: '',
                 vice: '',
+                terceiro: '',
+                quarto: '',
                 confirmarSenha: '',
             },
         };
@@ -160,6 +164,32 @@ class PalpiteForm extends React.Component {
                             </div>
                         </div>
 
+                        <div className={this.state.estado.camposDadosPalpiteDestaque ? 'form-group has-success' : 'form-group'}>
+                            <label className="col-sm-2 control-label" htmlFor="terceiro">Terceiro</label>
+                            <div className={this.state.mensagensValidacao['terceiro'] === '' ? "col-sm-4" : "col-sm-4 has-error"}>
+                                <input type="text"
+                                    className="form-control"
+                                    name="terceiro"
+                                    label="Terceiro"
+                                    disabled={this.state.estado.camposDadosPalpiteDesabilitados}
+                                    value={this.state.terceiro}
+                                    onChange={(event) => this.handleUserInput(event)} />
+                                <span className="text text-danger">{this.state.mensagensValidacao['terceiro']}</span>
+                            </div>
+                            <label className="col-sm-2 control-label" htmlFor="quarto">Quarto</label>
+                            <div className={this.state.mensagensValidacao['quarto'] === '' ? "col-sm-4" : "col-sm-4 has-error"}>
+                                <input type="text"
+                                    className="form-control"
+                                    name="quarto"
+                                    label="Quarto"
+                                    disabled={this.state.estado.camposDadosPalpiteDesabilitados}
+                                    value={this.state.quarto}
+                                    onChange={(event) => this.handleUserInput(event)} />
+                                <span className="text text-danger">{this.state.mensagensValidacao['quarto']}</span>
+                            </div>
+                        </div>
+
+
 
                         <div className="form-group">
                             <div className="col-sm-12">
@@ -211,11 +241,24 @@ class PalpiteForm extends React.Component {
             if (valor.length === 0) {
                 return 'Vice não pode ser vazio';
             }
-            if (valor === this.state.campeao) {
-                return 'Campeão e vice não podem ser iguais';
+            if (valor === this.state.campeao || valor === this.state.terceiro || valor === this.state.quarto) {
+                return 'O mesmo time não pode ser definido em diferentes colocações';
             }
-        }
-        else if (nome === 'nome' || nome === 'telefone' || nome === 'dataDeNascimento' || nome === 'campeao') {
+        } else if (nome === 'terceiro'){
+            if (valor.length === 0) {
+                return 'Terceiro não pode ser vazio';
+            }
+            if (valor === this.state.campeao || valor === this.state.vice || valor === this.state.quarto) {
+                return 'O mesmo time não pode ser definido em diferentes colocações';
+            }
+        } else if (nome === 'quarto'){
+            if (valor.length === 0) {
+                return 'Quarto não pode ser vazio';
+            }
+            if (valor === this.state.campeao || valor === this.state.vice || valor === this.state.terceiro) {
+                return 'O mesmo time não pode ser definido em diferentes colocações';
+        }        
+        } else if (nome === 'nome' || nome === 'telefone' || nome === 'dataDeNascimento' || nome === 'campeao') {
             if (valor === '') {
                 return 'Não pode ser vazio';
             }
@@ -331,6 +374,8 @@ class PalpiteForm extends React.Component {
             const novoPalpite = {
                 campeao: this.state.campeao,
                 vice: this.state.vice,
+                terceiro: this.state.terceiro,
+                quarto: this.state.quarto, 
                 palpiteiro: {
                     id: null,
                 }
@@ -373,6 +418,8 @@ class PalpiteForm extends React.Component {
                 dataDeNascimento: '',
                 campeao: '',
                 vice: '',
+                terceiro: '',
+                quarto: '',
                 confirmarSenha: '',
                 usuarioEncontrado: null,
             });

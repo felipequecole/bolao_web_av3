@@ -11,6 +11,24 @@ public class Palpite implements Serializable {
     private int id;
     private String campeao;
     private String vice;
+    private String terceiro; 
+    private String quarto; 
+
+    public String getTerceiro() {
+        return terceiro;
+    }
+
+    public void setTerceiro(String terceiro) {
+        this.terceiro = terceiro;
+    }
+
+    public String getQuarto() {
+        return quarto;
+    }
+
+    public void setQuarto(String quarto) {
+        this.quarto = quarto;
+    }
     private Usuario palpiteiro;
 
     public int getId() {

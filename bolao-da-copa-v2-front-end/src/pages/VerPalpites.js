@@ -48,6 +48,16 @@ class VerPalpites extends React.Component {
         filters['vice'] = { value: e.value };
         this.setState({ filters: filters });
     }
+    onTerceiroChange(e) {
+        let filters = this.state.filters;
+        filters['terceiro'] = { value: e.value };
+        this.setState({ filters: filters });
+    }
+    onQuartoChange(e) {
+        let filters = this.state.filters;
+        filters['quarto'] = { value: e.value };
+        this.setState({ filters: filters });
+    }
     onFilter(e) {
         this.setState({ filters: e.filters });
     }
@@ -65,6 +75,13 @@ class VerPalpites extends React.Component {
         let viceFilter = <Dropdown style={{ width: '100%' }} className="ui-column-filter"
             value={this.state.filters.vice ? this.state.filters.vice.value : null}
             options={this.state.selecoes} onChange={(e) => this.onViceChange(e)} />
+        let terceiroFilter = <Dropdown style={{ width: '100%' }} className="ui-column-filter"
+            value={this.state.filters.terceiro ? this.state.filters.terceiro.value : null}
+            options={this.state.selecoes} onChange={(e) => this.onTerceiroChange(e)} />
+        let quartoFilter = <Dropdown style={{ width: '100%' }} className="ui-column-filter"
+            value={this.state.filters.quarto ? this.state.filters.quarto.value : null}
+            options={this.state.selecoes} onChange={(e) => this.onQuartoChange(e)} />
+        
         return (
             <div>
                 <div className="content-section introduction">
@@ -91,6 +108,14 @@ class VerPalpites extends React.Component {
                             filterElement={campeaoFilter} filterMatchMode="equals" />
 
                         <Column field="vice" header="Vice" filter={true} filterElement={viceFilter}
+
+                            filterMatchMode="equals" />
+
+                        <Column field="terceiro" header="Terceiro" filter={true} filterElement={terceiroFilter}
+
+                            filterMatchMode="equals" />
+
+                        <Column field="quarto" header="Quarto" filter={true} filterElement={quartoFilter}
 
                             filterMatchMode="equals" />
                     </DataTable>
