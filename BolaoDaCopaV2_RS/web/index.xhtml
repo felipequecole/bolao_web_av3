@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:body>
+        <ui:composition template="./template.xhtml">
+            <ui:define name="content">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h1>Bolão da Copa 2.0</h1>
+                        <p>Participe da melhor competição
+                            do futebol mundial de um jeito
+                            muito mais intere$$ante!</p>
+                        <p>Entrando no bolão, todos os jogos
+                            passarão a ser importantes!
+                            Até mesmo o clássico Azerbaijão
+                            e Moldávia!</p>
+
+                        <h3>Selecione a opção abaixo</h3>
+                        <p>
+                            <button class="btn btn-success btn-space" jsf:outcome="palpiteForm">Palpitar</button>
+                            <button class="btn btn-success btn-space" jsf:outcome="listaPalpites">Ver os palpites</button>
+                        </p>
+                    </div>
+                </div>
+            </ui:define>     
+        </ui:composition>
+    </h:body>
+</html>
