@@ -31,6 +31,9 @@ const Header = () => (
                         <li>
                             <NavLink exact activeStyle={{ fontWeight: 'bold', color: 'yellowgreen' }} to='/verPalpites'>Ver palpites</NavLink>
                         </li>
+                        <li>
+                            <NavLink exact activeStyle={{ fontWeight: 'bold', color: 'yellowgreen' }} to='/resultado'>Resultados</NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

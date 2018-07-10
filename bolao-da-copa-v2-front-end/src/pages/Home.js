@@ -19,6 +19,7 @@ const Home = () => (
             <p>
                 <Link to='palpiteForm' className="btn btn-success btn-space">Palpitar</Link>
                 <Link to='verPalpites' className="btn btn-success btn-space">Ver os palpites</Link>
+                <Link to='resultados' className="btn btn-success btn-space">Calcular resultados</Link>
             </p>
         </div>
     </div>

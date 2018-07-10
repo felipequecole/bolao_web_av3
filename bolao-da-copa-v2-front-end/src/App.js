@@ -3,6 +3,7 @@ import Cabecalho from './pages/Cabecalho';
 import Home from './pages/Home';
 import PalpiteForm from './pages/PalpiteForm';
 import VerPalpites from './pages/VerPalpites';
+import Resultado from './pages/Resultados'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
              <Route path="/palpiteForm" component={PalpiteForm} />
              <Route path="/verPalpites" component={VerPalpites} />
+             <Route path="/resultado" component={Resultado} />
            </div>
          </div>
        </div>
