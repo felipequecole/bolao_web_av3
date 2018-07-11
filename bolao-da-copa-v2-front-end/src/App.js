@@ -17,7 +17,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
              <Route path="/palpiteForm" component={PalpiteForm} />
              <Route path="/verPalpites" component={VerPalpites} />
-             <Route path="/resultado" component={Resultado} />
+             <Route path="/resultados" component={Resultado} />
            </div>
          </div>
        </div>
